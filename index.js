@@ -1,15 +1,15 @@
 const express = require("express");
 const path = require("path");
 const TelegramBot = require("node-telegram-bot-api");
-const TOKEN = "7809426816:AAE-Nxk_R4NEh_wDeZxre5B9AyGgIf5e48I";
+const TOKEN = "7575486437:AAFNyMU7ZDkyEX8BpMLTAavtaGwHMCKdjF4";
 const server = express();
 const bot = new TelegramBot(TOKEN, {
     polling: true
 });
 const port = process.env.PORT || 5000;
-const gameName = "game_web_new_bot";
+const gameName = "web_tele12345_bot";
 const queries = {};
-server.use(express.static(path.join(__dirname, 'game_web_new_bot')));
+server.use(express.static(path.join(__dirname, 'web_tele12345_bot')));
 bot.onText(/help/, (msg) => bot.sendMessage(msg.from.id, "Say /game if you want to play."));
 bot.onText(/start|game/, (msg) => bot.sendGame(msg.from.id, gameName));
 bot.on("callback_query", function (query) {
